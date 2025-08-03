@@ -13,10 +13,11 @@ $espacio = "<br>";
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $mensaje = trim($_POST['Palabra']);
 
-    $sql = "INSERT INTO message (Mensaje) VALUES ('$mensaje')";
+    $sql = "INSERT INTO mensaje (Mensaje) VALUES ('$mensaje')";
 
     if ($conn->query($sql) === TRUE) {
-        echo "palabra agregada correctamente: " . $mensaje . $espacio;
+        $espacio = "<br>";$espacio = "<br>";$espacio = "<br>";$espacio = "<br>";$espacio = "<br>";$espacio = "<br>";
+        echo "palabra agregada correctamente: " . $mensaje;
     } else {
         echo "Error";
     }
@@ -47,11 +48,12 @@ $conn->close();
             <br><br>
             <div class="Violeta">
          <h2>Palabras a traducir</h2>
-        <form>
+            <form method="POST">
             <input class="form" type="text" id="Palabra" name="Palabra" placeholder="Palabra a buscar">
             <br><br>
-            <button class="btn" type="button" id="PalabraTraducir2"> Buscar</button>
-        </form>
+               <button class="btn" type="submit" id="btnGuardar">Guardar en DB</button>
+              <button class="btn" type="button" id="PalabraTraducir2"> Buscar</button>
+            </form>
         </div>
         </div>
         <div class="derecha">

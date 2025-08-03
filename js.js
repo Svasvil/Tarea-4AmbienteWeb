@@ -6,7 +6,6 @@ $(function () {
             $.get(apiURL + palabra, function (data) {
                 let definicion = data[0].meanings[0].definitions[0].definition;
                 $("#contenido").html("<h4>" + data[0].word + "</h4><p>" + definicion + "</p>");
-                $("#Palabra").val("");
             });
         }
         console.log(palabra);
