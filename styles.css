@@ -18,7 +18,7 @@
 
 .contenedor {
     display: flex;
-    flex-wrap: wrap; /* Added for responsiveness */
+    flex-wrap: wrap; 
 }
 
 .izquierda {
@@ -30,7 +30,7 @@
     color: var(--blanco);
     justify-content: center;
     text-align: center;
-    min-width: 300px; /* Added for responsiveness */
+    min-width: 300px; 
 }
 
 .derecha {

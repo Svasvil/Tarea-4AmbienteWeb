@@ -13,22 +13,4 @@ $(function () {
     })
 
 
-    $("#buscarFrase").on("click", function () {
-        let apiURL = "https://api.breakingbadquotes.xyz/v1/";
-        let endpoint = "quotes";
-
-        $.get(apiURL + endpoint, function (data) {
-            console.log(data)
-            $("#contenido-frase").html("<h3>" + data[0].author + "</h3><b>" + data[0].quote + "</b>")
-        })
-    })
-    /*
-s
-    
-$.post( "test.php", { name: "John", time: "2pm" })
-  .done(function( data ) {
-    alert( "Data Loaded: " + data );
-  });
-
-  */
 })

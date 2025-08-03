@@ -1,3 +1,28 @@
+<?php
+
+
+$server = "localhost";
+$username = "root";
+$password = "Fvasvil123";
+$database = "practica4";
+
+$conn = new mysqli($server, $username, $password, $database);
+
+$espacio = "<br>";
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $mensaje = trim($_POST['Palabra']);
+
+    $sql = "INSERT INTO message (Mensaje) VALUES ('$mensaje')";
+
+    if ($conn->query($sql) === TRUE) {
+        echo "palabra agregada correctamente: " . $mensaje . $espacio;
+    } else {
+        echo "Error";
+    }
+}
+$conn->close();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,7 +48,7 @@
             <div class="Violeta">
          <h2>Palabras a traducir</h2>
         <form>
-            <input class="form"  type="text" id="Palabra" placeholder="Palabra a buscar"><br>
+            <input class="form" type="text" id="Palabra" name="Palabra" placeholder="Palabra a buscar">
             <br><br>
             <button class="btn" type="button" id="PalabraTraducir2"> Buscar</button>
         </form>
